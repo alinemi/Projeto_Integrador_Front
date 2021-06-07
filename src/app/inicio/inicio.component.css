@@ -1,0 +1,15 @@
+.categoria{
+    width: 160pt;
+    height: 160pt;
+}
+
+.img-fluid{
+    max-width: 100%; 
+    height: auto;
+}
+
+.produto{
+    width: 150pt;
+    height: 150pt;
+    padding: 5pt;
+}

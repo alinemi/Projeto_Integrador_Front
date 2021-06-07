@@ -1,0 +1,10 @@
+.fotoVendedore{
+    width: 150px;
+    height: 150px;
+    border-radius: 10%;
+}
+
+.nomeVendedore{
+    font-weight: bold;
+    font-size: 20pt;
+}

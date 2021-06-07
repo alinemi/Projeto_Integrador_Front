@@ -1,0 +1,33 @@
+.fotoProduto{
+    width: 700px;
+    height: 500px;
+}
+
+.nomeProduto{
+    font-weight: bold;
+    font-size: 35pt;
+    text-decoration: underline #FFAF26;
+}
+
+.valorProduto{
+    font-weight: bold;
+    font-size: 30pt;
+}
+
+.fotoVendedore{
+    width: 200px;
+    height: 200px;
+}
+
+.fundoVendedore{
+    background-color: #C9EAC8;
+}
+
+.nomeVendedore{
+    font-weight: bold;
+    font-size: 25pt;
+}
+
+.fotoVendedore{
+    border-radius: 50%;
+}
