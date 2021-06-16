@@ -1,14 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
-html
-{
+html {
     scroll-behavior: smooth;
+    background-color: #006B54;
 }
 
-.fs-54{
+.fs-54 {
     font-size: 54pt;
 }
 
-.fs-18{
+.fs-18 {
     font-size: 18pt;
 }

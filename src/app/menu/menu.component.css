@@ -1,7 +1,19 @@
-.navbar{
-    background-color: #88D885;
+.navbar, .modal-header, .modal-body, .modal-footer{
+    background-color: #006B54;
 }
 
-a{
-    color: black;
+a, h5, label{
+    color: rgb(255,255,255);
+}
+
+.logo{
+    width: 70px;
+    height: 70px;
+}
+
+.cont{
+        
+		font-weight: bold;
+		font-size: 14pt;
+		font-family: monospace;
 }

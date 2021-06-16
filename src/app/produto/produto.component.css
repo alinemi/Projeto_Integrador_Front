@@ -1,12 +1,7 @@
-.fotoProduto{
-    width: 700px;
-    height: 500px;
-}
 
 .nomeProduto{
     font-weight: bold;
     font-size: 35pt;
-    text-decoration: underline #FFAF26;
 }
 
 .valorProduto{
@@ -17,10 +12,11 @@
 .fotoVendedore{
     width: 200px;
     height: 200px;
+    border-radius: 50%;
 }
 
 .fundoVendedore{
-    background-color: #C9EAC8;
+    background-color: #006B54;
 }
 
 .nomeVendedore{
@@ -28,6 +24,25 @@
     font-size: 25pt;
 }
 
-.fotoVendedore{
-    border-radius: 50%;
+.textoCard{
+    color: white;
+}
+
+
+
+.btn-editar{
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-deletar{
+    color: rgb(99, 95, 95);
+    border: 2px solid #F9960E;
+    background-color: #FCB808;
+}
+
+.btn-contato{
+    color: white;
+    background-color: #006B54;
 }

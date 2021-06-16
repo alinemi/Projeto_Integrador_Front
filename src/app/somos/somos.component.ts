@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
+import { AlertasService } from '../service/alert.service';
 
 @Component({
   selector: 'app-somos',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SomosComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router:Router,
+    private alertas:AlertasService,
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit( ){
+    window.scroll(0,0)
+    if(environment.token==''){
+      this.alertas.showAlertDanger('Sua sessão expirou,faça o login novamente')
+      this.router.navigate(['/entrar'])
+    }
   }
-
 }

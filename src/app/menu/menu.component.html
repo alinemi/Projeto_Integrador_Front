@@ -1,42 +1,84 @@
 <!--Menu-->
-<nav class="navbar navbar-expand-lg ">
-    <a class="navbar-brand" href="#">Logo</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Lorem<span class="sr-only">(página atual)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Lorem</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Lorem</a>
-        </li>
-      </ul>
-      <span class="navbar-text mr-2">
-        Icone
-      </span>
-      <span class="navbar-text">
-        Icone
-      </span>
+<div class="container-fluid p-0">
+    <nav class="navbar navbar-expand-lg ">
+        <a class="navbar-brand myLogo" routerLink='/inicio'><img src="https://i.imgur.com/DecAfeT.png" class="logo" /></a>
+
+        <div class="collapse navbar-collapse cont" id="conteudoNavbarSuportado">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink='/produto/:id'>Produtos |</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#modalExemplo">Cadastrar produtos |</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink='/somos'>Quem somos</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto d-flex align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink='/minha-conta/:id'>Minha conta</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<!--/Menu-->
+
+
+
+<!--Modal-->
+<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Novo Produto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <label for="nome">Nome do produto</label>
+                    <input [(ngModel)]='produto.nome' ngDefaultControl type="text" name="nomeProduto" class="form-control" id="nomeProduto" placeholder="Insira o nome do produto">
+                </div>
+
+                <div class="form-group">
+                    <label for="preco">Preço do produto</label>
+                    <input [(ngModel)]='produto.preco' ngDefaultControl type="text" name="precoProduto" class="form-control" id="precoProduto" placeholder="Insira o preço do produto">
+                </div>
+
+                <div class="form-group">
+                    <label for="categoria">Categoria do produto</label>
+                    <select name="categoria" id="categoria" class="form-control" [(ngModel)]='idCategoria' (change)='findByIdCategoria()'>
+                  <option *ngFor='let item of listaCategoria' value="{{item.id}}">{{item.nome}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label ngDefaultControl for="linkImagemProduto">Link da imagem</label>
+                    <input [(ngModel)]='produto.foto' type="text" name="imagemProduto" class="form-control" id="imagemProduto" placeholder="Insira o link da imagem do produto">
+                </div>
+                <!---->
+
+                <div class="form-group">
+                    <label ngDefaultControl for="descricao">Descrição do produto</label>
+                    <textarea [(ngModel)]='produto.observacao' class="form-control" name="descricao" id="descricao" rows="5"></textarea>
+                </div>
+
+                <!---->
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" (click)='publicar()' data-dismiss="modal">Publicar</button>
+            </div>
+        </div>
     </div>
-  </nav>
-  
-
-  <!--Barra de navegação-->
-  <div class="container d-flex justify-content-center mb-5 barra">
-    <div >
-      <form class="form-inline my- my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>        
-      </form>
-    </div>
-  </div>
-  <!--/Barra de navegação-->
-
-
-<!--Menu-->
+</div>
+<!--/Modal-->

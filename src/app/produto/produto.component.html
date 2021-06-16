@@ -1,13 +1,27 @@
 <div class="container">
     <div class="col-md-12 px-5">
 
+        <!--Teste editar e deletar-->
+        <div class="container-md-12">
+            <div class="row mt-5 d-flex justify-content-end">
+                <a [routerLink]="['/produto-edit', produto.id]" href="" type="button" class="btn btn-editar mr-3">Editar</a>
+                <a [routerLink]="['/produto-delete', produto.id]" href="" type="button" class="btn btn-deletar">Deletar</a>
+            </div>
+        </div>
+        <!--/Teste editar e deletar-->
+
+
+
+
+
         <!--Foto do produto-->
         <div class="produto">
             <div class="row d-flex justify-content-center">
                 <div class="container-fluid " >
                     <div class="d-flex justify-content-center">
-                        <img src="https://www.wikihow.com/images_en/thumb/a/a9/Buy-a-Good-Avocado-Step-1-Version-4.jpg/v4-460px-Buy-a-Good-Avocado-Step-1-Version-4.jpg.webp" class="img-fluid fotoProduto" alt="Imagem responsiva">
+                        <img src="{{produto.foto}}" class="img-fluid fotoProduto" alt="Imagem responsiva">
                     </div>
+                    <!--{{produto.foto}}-->
                 </div>
             </div>
         </div>
@@ -20,18 +34,30 @@
             <div class="row mt-5">
                 <div class="col-md-6">
                     <div class="container d-flex justify-content-start">
-                        <p class="nomeProduto">Nome do Produto</p>
+                        <p class="nomeProduto">{{produto.nome}}</p>
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="container d-flex justify-content-end">
-                       <p class="valorProduto">Valor</p>
+                       <p class="valorProduto">$ {{produto.preco}}</p>
                     </div>
 
+
                     <div class="row">
-                        <div class="container d-flex justify-content-end">
-                            <p class="publicacaoProduto">Data da publicação</p>
+                        <div class="col-md-12">
+                            <div class="container d-flex justify-content-end">
+                                <div class="row">
+                                    <small class="mr-3">Data de publicação</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="container d-flex justify-content-end">
+                                <p class="publicacaoProduto">{{produto.date | date:'dd/MM/yyyy'}} as {{produto.date | date:'HH:mm'}}</p> 
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -43,51 +69,104 @@
 
         <!--Informações do produto-->
         <div class="col-md-6 d-flex justify-content-start mt-2">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Fale do produto</li>
-                <li class="list-group-item">Fale sobre o produto</li>
-                <li class="list-group-item">Descreva a questão estética do produto</li>
-                <li class="list-group-item">Conte a história do produto</li>
-            </ul>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>{{produto.observacao}}</p>
+                </div>
+            </div>
+            <!--{{observacao}}-->
         </div>
         <!--/Informações do produto-->
         
 
 
         <!--Contato com vendedore-->
-        <div class="col-md-12 d-flex justify-content-end mt-2">
-            <button type="button" class="btn btn-success btn-lg">Mande mensagem</button>
+        <div class="col-md-12 d-flex justify-content-end mt-3 ">
+            <a class="mr-2" href="http://api.whatsapp.com/send?phone={{usuario.celular}}." target="_blank"> <button type="button" class="btn btn-contato" >Whatsapp</button></a>
+
+            <a href="{{usuario.email}}" target="_blank"> <button type="button" class="btn btn-contato lm-2" >Email</button></a>
         </div>
         <!--/Contato com vendedore-->
 
 
 
         <!--Informações vendedore-->
-        <div class="col-md-12 mt-5">
-            <div class="card fundoVendedore">
-                <div class="card-body">
-                    <div class="col-md-4 d-flex justify-content-start mr-3 img-fluid">
-                        <img class="fotoVendedore" src="https://www.hojeemdia.com.br/polopoly_fs/1.638756!/image/image.jpg_gen/derivatives/landscape_653/image.jpg" alt="">
+        <!--
+        <div class="container-fluid">
+            <div class="card mt-5 fundoVendedore d-flex justify-content-center" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="https://www.hojeemdia.com.br/polopoly_fs/1.638756!/image/image.jpg_gen/derivatives/landscape_653/image.jpg" class="card-img fotoVendedore p-1" alt="...">
+                    </div>
 
-                        <div class="ml-4 col-md-8">
-                            <div class="row">
-                                <p class="nomeVendedore">aaaaaaaaaa</p>
-                            </div>
-                            <div class="row">
-                                <p>aaaaaaaaaaaaaaaaaa</p>
-                            </div>
-                            <div class="row">
-                                <p>aaaaaaaaaaja</p>
-                            </div>
-                            <div class="row">
-                                <p>asijdimsaaaaaaaaaaaaaaaaaa</p>
-                            </div> 
+                    <div class="col-md-8">
+                        <div class="card-body ml-4">
+                        <h5 class="card-title nomeVendedore textoCard">Nome {{usuario.nome}}</h5>
+                        <p class="card-text textoCard">aaaaaaaaaa</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        -->
+
         <!--/Informações vendedore-->
-        
+
     </div>
 </div>
+<!--[routerLink]="['/produto-edit', produto.id]" href=""-->
+
+
+<!--
+<div class="modalEditar fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar Produto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <label for="nome">Nome do produto</label>
+                    <input [(ngModel)]='produto.nome' ngDefaultControl type="text" name="nomeProduto" class="form-control" id="nomeProduto" placeholder="Insira o nome do produto">
+                </div>
+
+                <div class="form-group">
+                    <label for="preco">Preço do produto</label>
+                    <input [(ngModel)]='produto.preco' ngDefaultControl type="text" name="precoProduto" class="form-control" id="precoProduto" placeholder="Insira o preço do produto">
+                </div>
+
+                <div class="form-group">
+                    <label for="categoria">Categoria do produto</label>
+                    <select name="categoria" id="categoria" class="form-control" [(ngModel)]='idCategoria' (change)='findByIdCategoria()'>
+                  <option *ngFor='let item of listaCategoria' value="{{item.id}}">{{item.nome}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label ngDefaultControl for="linkImagemProduto">Link da imagem</label>
+                    <input [(ngModel)]='produto.foto' type="text" name="imagemProduto" class="form-control" id="imagemProduto" placeholder="Insira o link da imagem do produto">
+                </div>
+                
+
+                <div class="form-group">
+                    <label ngDefaultControl for="descricao">Descrição do produto</label>
+                    <textarea [(ngModel)]='produto.observacao' class="form-control" name="descricao" id="descricao" rows="5"></textarea>
+                </div>
+
+                
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" (click)='editar()' data-dismiss="modal">Editar</button>
+            </div>
+        </div>
+    </div>
+</div>
+-->

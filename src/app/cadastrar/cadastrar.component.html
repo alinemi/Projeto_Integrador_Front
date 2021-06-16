@@ -1,40 +1,41 @@
-<div id="container-fluid">
+<div class="container-fluid corpo">
+    <div class="row d-flex align-items-center">
 
-    <div class="row">
+        <div class="col-md-12 d-flex justify-content-center mt-3 mb-4">
+            <div class="card example1">
+                <div class="col-md-12 mb-3" id="img-bg">
 
-        <div class="col-md-12 mt-5 mb-5" id="img-bg">
+                    <div class="d-flex justify-content-center"><img src="https://i.imgur.com/28Q1JbO.png" class="logo" alt="logotipo"></div>
 
-            <h1>
-                <div class="d-flex justify-content-center"><img src="https://i.imgur.com/aQNGld1.png" alt="logotipo"></div>
-            </h1>
+                    <div class="row d-flex justify-content-center ">
 
-            <div class="row d-flex justify-content-center ">
+                        <div class="col-md-12">
 
-                <div class="md-12">
+                            <div class="form-group mb-4 mt-3">
+                                <input [(ngModel)]='user.nome' class="form-control campo" type="text" name="nome" id="nome" placeholder="Insira seu nome completo">
+                            </div>
 
-                        <div class="form-group">
-                        <label for="nome">Nome</label>
-                        <input [(ngModel)]='user.nome' class="form-control" type="text" name="nome" id="nome" style="width: 650px;"  placeholder="Insira seu nome completo">
+                            <div class="form-group mb-4 mt-4">
+                                <input [(ngModel)]='user.email' class="form-control campo" type="email" name="email" id="email" placeholder="Insira seu e-mail">
+                            </div>
+
+                            <div class="form-group mb-4 mt-4">
+                                <input [(ngModel)]='user.celular' class="form-control campo" type="text" name="celular" id="celular" placeholder="Celular">
+                            </div>
+
+                            <div class="form-group mb-4 mt-4">
+                                <input (input)='confirmSenha($event)' class="form-control campo" type="password" name="senha" id="senha" placeholder="Insira sua senha">
+                            </div>
+                            <div class="form-group mb-4 mt-4">
+                                <input [(ngModel)]='user.senha' class="form-control campo" type="password" name="confirmSenha" id="confirmSenha" placeholder="Confirme sua senha" required>
+                            </div>
+
+                            <div class="d-flex justify-content-center mt-2">
+                                <button type="submit" class="btn btn-entrar mr-5" routerLink="/entrar">Cancelar</button>
+                                <button type="submit" class="btn btn-success" (click)='cadastrar()'>Cadastrar</button>
+                            </div>
+                        </div>
                     </div>
-                
-                    <div class="form-group">
-                        <label for="email">E-mail</label>
-                        <input [(ngModel)]='user.email' class="form-control" type="text" name="email" id="email" placeholder="Insira seu e-mail">
-                    </div>
-                    <div class="form-group">
-                        <label for="senha">Senha</label>
-                        <input (input)='confirmSenha($event)' class="form-control" type="password" name="senha" id="senha" placeholder="Insira sua senha">
-                    </div>
-                    <div class="form-group">
-                        <label for="confirmSenha">Confirmar Senha</label>
-                        <input [(ngModel)]='user.senha' class="form-control" type="password" name="confirmSenha" id="confirmSenha" placeholder="Confirme sua senha">
-                    </div>
-
-                    <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-danger mr-4" routerLink="/entrar">Cancelar</button>
-                        <button type="submit" class="btn btn-success" (click)='cadastrar()'>Cadastrar</button>
-                    </div>
-
                 </div>
             </div>
         </div>

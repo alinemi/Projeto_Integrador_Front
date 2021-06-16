@@ -1,11 +1,18 @@
 .page-footer{
-    background-color: #88D885;
+    background-color: #006B54;
 }
 
 .footer-copyright{
-    background-color: #44B92E;
+    background-color: #006B54;
 }
 
 .text{
-    color: black;
+    color: rgb(255, 255, 255);
+}
+
+.cont{
+        
+    font-weight: bold;
+    font-size: 14pt;
+    font-family: monospace;
 }
