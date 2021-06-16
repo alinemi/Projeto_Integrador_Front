@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Usuario } from '../model/Usuario';
@@ -55,8 +55,7 @@ export class MinhaContaComponent implements OnInit {
   }
 
   atualizar(){
-    this.user.tipo = this.tipoUsuario
-    this.user.tipo = this.confirmarSenha
+    this.user.senha = this.confirmarSenha
     
 
     if(this.user.senha != this.confirmarSenha) {

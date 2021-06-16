@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'src/app/model/Categoria';
 import { Produto } from 'src/app/model/Produto';
+import { Usuario } from 'src/app/model/Usuario';
 import { AlertasService } from 'src/app/service/alert.service';
 import { CategoriaService } from 'src/app/service/categoria.service';
 import  {ProdutoService } from 'src/app/service/produto.service'
@@ -20,6 +21,8 @@ export class ProdutoEditComponent implements OnInit {
   categoria: Categoria = new Categoria()
   listaCategoria: Categoria[]
   idCategoria: number
+  usuario:Usuario = new Usuario()
+  idUsuario:number = environment.id
 
   constructor(
     private router: Router,
@@ -64,11 +67,14 @@ export class ProdutoEditComponent implements OnInit {
     this.categoria.id = this.idCategoria
     this.produto.categoria = this.categoria
 
+    this.usuario.id = this.idUsuario
+    this.produto.usuario = this.usuario
+
     this.produtoService.putProduto(this.produto).subscribe((resp: Produto)=>{
       this.produto = resp
 
       this.alertas.showAlertSuccess('Produto atualizado com sucesso!')
-      this.router.navigate([''])
+      this.router.navigate(['/inicio'])
     })
 
   }

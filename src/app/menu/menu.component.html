@@ -6,9 +6,6 @@
         <div class="collapse navbar-collapse cont" id="conteudoNavbarSuportado">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" routerLink='/produto/:id'>Produtos |</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="#" data-toggle="modal" data-target="#modalExemplo">Cadastrar produtos |</a>
                 </li>
                 <li class="nav-item">
@@ -17,8 +14,13 @@
             </ul>
 
             <ul class="navbar-nav ml-auto d-flex align-items-center">
-                <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/minha-conta',idUsuario]">Minha conta</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Minha conta
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" [routerLink]="['/minha-conta',idUsuario]">Editar</a>
+                        <a class="dropdown-item text-light texto" (click)='sair()'>Sair</a> </div>
                 </li>
             </ul>
         </div>

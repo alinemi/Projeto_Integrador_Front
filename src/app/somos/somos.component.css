@@ -4,8 +4,6 @@
 }
 
 .fotoImpar {
-    width: 200px;
-    height: 200px;
     border-radius: 50%;
 }
 
@@ -15,15 +13,19 @@
 
 .nome {
     font-weight: bold;
-    font-size: 25pt;
+    font-size: 23pt;
+    font-family: monospace;
     color: white;
 }
 
 .descricao {
     font-size: 13pt;
     color: white;
+    font-family: 'Noto Sans', sans-serif;
 }
 
-.text-link {
+.text-link,
+p {
     color: rgb(133, 195, 253);
+    font-size: 10;
 }

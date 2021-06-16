@@ -1,19 +1,28 @@
-.navbar, .modal-header, .modal-body, .modal-footer{
+.navbar,
+.modal-header,
+.modal-body,
+.modal-footer,
+.dropdown-menu {
     background-color: #006B54;
 }
 
-a, h5, label{
-    color: rgb(255,255,255);
+a,
+h5,
+label {
+    color: rgb(255, 255, 255);
 }
 
-.logo{
+.texto:hover {
+    color: black;
+}
+
+.logo {
     width: 70px;
     height: 70px;
 }
 
-.cont{
-        
-		font-weight: bold;
-		font-size: 14pt;
-		font-family: monospace;
+.cont {
+    font-weight: bold;
+    font-size: 14pt;
+    font-family: monospace;
 }
