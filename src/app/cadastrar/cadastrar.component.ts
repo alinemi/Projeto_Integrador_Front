@@ -50,7 +50,7 @@ export class CadastrarComponent implements OnInit {
 
   cadastrar(){
    if (this.user.senha != this.confirmarSenha) {
-     alert('As senhas devem ser iguais')
+    this.alertas.showAlertDanger('As senhas devem ser iguais')
     } else {
       this.authService.cadastrar(this.user).subscribe((resp: Usuario) => {
         this.user = resp
@@ -61,7 +61,6 @@ export class CadastrarComponent implements OnInit {
   }
 
 
-  
 }
 
-
+  

@@ -1,33 +1,42 @@
 <!--Menu-->
 <div class="container-fluid p-0">
     <nav class="navbar navbar-expand-lg ">
+
         <a class="navbar-brand myLogo" routerLink='/inicio'><img src="https://i.imgur.com/DecAfeT.png" class="logo" /></a>
 
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+            <i class="fa fa-caret-down" style="color: white;" aria-hidden="true"></i>
+       </button>
+
         <div class="collapse navbar-collapse cont" id="conteudoNavbarSuportado">
+
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" routerLink='/produto/:id'>Produtos |</a>
+                    <a class="nav-link d-flex justify-content-center " href="#" data-toggle="modal" data-target="#modalExemplo">Cadastrar produtos</a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="#" data-toggle="modal" data-target="#modalExemplo">Cadastrar produtos |</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink='/somos'>Quem somos</a>
+                    <a class="nav-link d-flex justify-content-center" routerLink='/somos'>Quem somos</a>
                 </li>
             </ul>
 
-            <ul class="navbar-nav ml-auto d-flex align-items-center">
-                <li class="nav-item">
-                    <a class="nav-link" routerLink='/minha-conta/:id'>Minha conta</a>
+            <ul class="navbar-nav  d-flex align-items-center">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle ml-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Minha conta
+                            </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item text-center" [routerLink]="['/minha-conta',idUsuario]">Editar</a>
+                        <a class="dropdown-item text-center" href="" (click)='sair()'>Sair</a>
+                    </div>
                 </li>
             </ul>
+
         </div>
     </nav>
 </div>
 
 <!--/Menu-->
-
-
 
 <!--Modal-->
 <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

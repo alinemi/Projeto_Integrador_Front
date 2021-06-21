@@ -2,28 +2,30 @@
     <div class="row d-flex justify-content-center mt-5 mb-5">
         <div class="col-md-4">
             <div class="form-group">
-                <input [(ngModel)]='nomeCategoria' type="text" class="form-control" id="titulo"
-                    placeholder="Digite um produto para pesquisar" [(ngModel)]='tituloProd' (keyup)='findByNomeProduto()'>
+                <input [(ngModel)]='nomeCategoria' type="text" class="form-control" id="titulo" placeholder="Digite um produto para pesquisar" [(ngModel)]='tituloProd' (keyup)='findByNomeProduto()'>
             </div>
         </div>
     </div>
-
-    <div class="col-md-12">
-        <div class="card-columns p-5" *ngFor='let categoria of listaCategoria'>
-            <div class="card text-center border-0" *ngFor='let item of categoria.postagem | orderBy : key : reverse'>
-                <div class="card carta">
-                    <img class="card-img-top" src={{item.foto}} alt="Imagem de capa do card">
-                    <div class="card-body">
-                        <h5 class="card-title m-0">{{item.nome}}</h5>
-                        <p class="text-success"> R$ {{item.preco}},00</p>
-                        <small class="text-muted"> Categoria: {{item.categoria.nome}}</small>
-                        <p class="card-text"><small class="text-muted">
+    <div class="row">
+        <div class="col-md-12 d-flex justify-content-center">
+            <div class="card-columns" style="flex-wrap: wrap;" *ngFor='let categoria of listaCategoria'>
+                <div class="card text-center border-0" style="padding-inline: 2.25em;" *ngFor='let item of categoria.postagem | orderBy : key : reverse'>
+                    <div *ngIf='item.nome.includes(tituloProd)'>
+                        <div class="card carta">
+                            <img class="card-img-top" style="margin-left: 30px;" src={{item.foto}} alt="Imagem de capa do card">
+                            <div class="card-body">
+                                <h5 class="card-title m-0">{{item.nome}}</h5>
+                                <p class="text-success"> R$ {{item.preco}},00</p>
+                                <small class="text-muted"> Categoria: {{item.categoria.nome}}</small>
+                                <p class="card-text"><small class="text-muted">
                                 {{item.date | date: 'dd/MM/yyyy'}} às {{item.date | date: 'HH:mm'}}
-                            </small></p>
-                        <p class="card-text"><small class="text-muted">
+                                </small></p>
+                                <p class="card-text"><small class="text-muted">
                                 by: {{item.usuario.nome}}
-                            </small></p>
-                        <a routerLink="/produto/:id" class="btn btn-primary">Visualizar</a>
+                                </small></p>
+                                <a [routerLink]="['/produto', item.id]" class="btn btn-success">Visualizar</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

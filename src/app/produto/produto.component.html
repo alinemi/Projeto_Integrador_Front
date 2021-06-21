@@ -3,13 +3,9 @@
 
         <!--Teste editar e deletar-->
         <div class="container-md-12">
-            <div class="row mt-5 d-flex justify-content-end">
-                <!--<a [routerLink]="['/produto-edit', produto.id]" class="mr-2" ><button type="button" class="btn btn-primary">Editar</button></a>
-                <a [routerLink]="['/produto-delete', produto.id]" href=""><button type="button" class="btn btn-danger">Deletar</button></a>
-                -->
-
-                <a [routerLink]="['/produto-edit', produto.id]" href="" type="button" class="btn btn-primary mr-3">Editar</a>
-                <a [routerLink]="['/produto-delete', produto.id]" href="" type="button" class="btn btn-danger">Deletar</a>
+            <div *ngIf='autor()' class="row mt-5 d-flex justify-content-end">
+                <a [routerLink]="['/produto-edit', produto.id]" href="" type="button" class="btn btn-editar mr-3">Editar</a>
+                <a [routerLink]="['/produto-delete', produto.id]" href="" type="button" class="btn btn-deletar">Deletar</a>
             </div>
         </div>
         <!--/Teste editar e deletar-->
@@ -21,9 +17,9 @@
         <!--Foto do produto-->
         <div class="produto">
             <div class="row d-flex justify-content-center">
-                <div class="container-fluid " >
+                <div class="container-fluid ">
                     <div class="d-flex justify-content-center">
-                        <img src="" class="img-fluid fotoProduto" alt="Imagem responsiva">
+                        <img src="{{produto.foto}}" class="img-fluid fotoProduto" alt="Imagem responsiva">
                     </div>
                     <!--{{produto.foto}}-->
                 </div>
@@ -38,25 +34,34 @@
             <div class="row mt-5">
                 <div class="col-md-6">
                     <div class="container d-flex justify-content-start">
-                        <p class="nomeProduto">nome</p>
+                        <p class="nomeProduto">{{produto.nome}}</p>
                     </div>
-                    <!--{{produto.nome}}-->
                 </div>
 
                 <div class="col-md-6">
                     <div class="container d-flex justify-content-end">
-                       <p class="valorProduto">preço</p>
+                        <p class="valorProduto">$ {{produto.preco}}</p>
                     </div>
-                    <!--{{produto.preco}}-->
+
 
                     <div class="row">
-                        <div class="container d-flex justify-content-end">
-                            <p class="publicacaoProduto">Data da publicação</p> 
+                        <div class="col-md-12">
+                            <div class="container d-flex justify-content-end">
+                                <div class="row">
+                                    <small class="mr-3">Data de publicação</small>
+                                </div>
+                            </div>
                         </div>
-                        <!--{{produto.data}}-->
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="container d-flex justify-content-end">
+                                <p class="publicacaoProduto">{{produto.date | date:'dd/MM/yyyy'}} as {{produto.date | date:'HH:mm'}}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>  
+            </div>
         </div>
         <!--/Nome, valor e publicação-->
 
@@ -64,68 +69,22 @@
 
         <!--Informações do produto-->
         <div class="col-md-6 d-flex justify-content-start mt-2">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Fale do produto</li>
-                <li class="list-group-item">Fale sobre o produto</li>
-                <li class="list-group-item">Descreva a questão estética do produto</li>
-                <li class="list-group-item">Conte a história do produto</li>
-            </ul>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>{{produto.observacao}}</p>
+                </div>
+            </div>
+            <!--{{observacao}}-->
         </div>
         <!--/Informações do produto-->
-        
+
 
 
         <!--Contato com vendedore-->
-        <div class="col-md-12 d-flex justify-content-end mt-2 ">
-            <a class="mr-2" href="http://api.whatsapp.com/send?phone=5511998898997." target="_blank"> <button type="button" class="btn btn-success" >Whatsapp</button></a>
-            <!--{{usuario.celular}}-->
-
-            <a href="{{usuario.email}}" target="_blank"> <button type="button" class="btn btn-success lm-2" >Email</button></a>
+        <div class="col-md-12 d-flex justify-content-end mt-3 ">
+            <a href="http://api.whatsapp.com/send?phone={{usuario.celular}}." target="_blank"> <button type="button" class="btn btn-contato">Whatsapp</button></a>
         </div>
         <!--/Contato com vendedore-->
-
-
-
-        <!--Informações vendedore-->
-        <div class="col-md-12 mt-5">
-            <div class="row d-flex flex-row-reverse">
-                <div class="card fundoVendedore">
-                    <div class="card-body">
-                        <div class="col-md-4 d-flex justify-content-start mr-3 img-fluid">
-                            <img class="fotoVendedore" src="https://www.hojeemdia.com.br/polopoly_fs/1.638756!/image/image.jpg_gen/derivatives/landscape_653/image.jpg" alt="">
-    
-                            <div class="ml-4 col-md-8">
-                                <div class="row">
-                                    <p class="nomeVendedore">aaaaaaaaaa</p>
-                                </div>
-                                <div class="row">
-                                    <p>aaaaaaaaaaaaaaaaaa</p>
-                                </div>
-                                <div class="row">
-                                    <p>aaaaaaaaaaja</p>
-                                </div>
-                                <div class="row">
-                                    <p>asijdimsaaaaaaaaaaaaaaaaaa</p>
-                                </div> 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-        </div>
-        <!--/Informações vendedore-->
-        
-    </div>
-</div>
-
-<div class="container">
-    <div class="col-md-12 px-5">
-
-        <div class="d-flex flex-row-reverse">
-            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat possimus ullam odio magnam, laborum accusantium veritatis impedit dicta unde eaque beatae eius ducimus, enim optio voluptatibus harum exercitationem nulla molestias?</h2>
-        </div>
-        
 
     </div>
 </div>

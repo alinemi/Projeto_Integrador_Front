@@ -26,7 +26,7 @@ export class VerdurasComponent implements OnInit {
 
   produto: Produto = new Produto
   listaProdutos: Produto[]
-  tituloProd: string
+  tituloProd: string =''
 
   key = 'data'
   reverse = true
@@ -40,7 +40,10 @@ export class VerdurasComponent implements OnInit {
   ngOnInit() {
 
     window.scroll(0, 0)
-
+    if(environment.token==''){
+      alert('Sua sessão expirou,faça o login novamente')
+      this.router.navigate(['/entrar'])
+    }
     this.findByNomeCategoria()
     this.getAllProduto()
   }

@@ -10,7 +10,8 @@ import { SomosComponent } from './somos/somos.component';
 import { FrutaComponent } from './fruta/fruta.component';
 import { LegumesComponent } from './legumes/legumes.component';
 import { VerdurasComponent } from './verduras/verduras.component';
-import { MinhaContaComponent } from './minha-conta-edit/minha-conta.component';
+import { MinhaContaComponent } from './minha-conta/minha-conta.component';
+
 
 const routes: Routes = [
 

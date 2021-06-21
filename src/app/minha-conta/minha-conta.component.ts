@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Usuario } from '../model/Usuario';
@@ -14,8 +14,10 @@ export class MinhaContaComponent implements OnInit {
 
   user: Usuario = new Usuario
   idUser: number
-  tipoUsuario: string
   confirmarSenha: string
+  tipoUsuario: string
+  email: string
+  celular: string
 
 
   constructor(
@@ -29,14 +31,21 @@ export class MinhaContaComponent implements OnInit {
   ngOnInit() {
     window.scroll(0,0)
     if(environment.token==''){
-      this.alertas.showAlertDanger('Sua sessão expirou,faça o login novamente')
+      alert('Sua sessão expirou,faça o login novamente')
       this.router.navigate(['/entrar'])
     }
 
     this.idUser = this.route.snapshot.params['id'] 
     this.findByIdUser(this.idUser)
   }
-  
+
+  validaEmail(event:any){
+    this.email= event.target.value
+  }
+
+  validaCelular(event:any){
+    this.celular= event.target.value
+  }
 
   confirmSenha(event: any) {
     this.confirmarSenha = event.target.value
@@ -47,6 +56,8 @@ export class MinhaContaComponent implements OnInit {
   }
 
   atualizar(){
+    this.user.senha = this.confirmarSenha
+    
 
     if(this.user.senha != this.confirmarSenha) {
       this.alertas.showAlertDanger('As senhas estão incorretas.')
@@ -58,6 +69,8 @@ export class MinhaContaComponent implements OnInit {
         environment.token = ''
         environment.nome = ''
         environment.id = 0
+        environment.celular = 0
+        environment.email = ''
 
         this.router.navigate(['/entrar'])
       })

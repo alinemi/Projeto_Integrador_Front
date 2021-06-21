@@ -4,3 +4,8 @@
     font-size: 14pt;
     font-family: monospace;
 }
+
+.btn-editar{
+    color: white;
+    background-color: #006B54;
+}

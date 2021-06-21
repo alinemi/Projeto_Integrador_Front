@@ -10,4 +10,5 @@ export class Usuario{
     public mensagemRecebida: Mensagem[]
     public mensagemEnviada: Mensagem[]
     public celular:number
+  tipo: string
 }

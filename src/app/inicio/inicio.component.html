@@ -6,100 +6,88 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     </head>
-
-    <!--Carrossel-->
-    <div class="col-md-12 p-0">
-
-        <div class="row">
-            <div class="container-fluid p-0">
-                <div class="">
-
-                    <div data-interval="12500" id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" src="https://i.imgur.com/v0wqvLS.jpg" alt="Primeiro Slide">
-                            </div>
-
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="https://i.imgur.com/EftH8rH.jpg" alt="Segundo Slide">
-                            </div>
-
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="https://i.imgur.com/X0DefqG.jpg" alt="Terceiro Slide">
-                            </div>
-
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
-                            data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Anterior</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleControls" role="button"
-                            data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Próximo</span>
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--/Carrossel-->
+    <div>
 
 
-    <!--Categorias específicas-->
-    <br>
-    <div class="col-md-12 cont">
-        <p class="text-monospace font-weight-bold d-flex justify-content-center fs-14 text-secondary">
-            Selecione uma categoria:
-        </p>
+        <!--Carrossel-->
+        <div class="col-md-12 ">
 
+            <div class="row">
+                <div class="container-fluid p-0">
+                    <div class="">
 
-        <div class="row">
-            <div class="container-fluid">
-                <div class="d-flex justify-content-center">
-
-                    <div class="card-group">
-                        <div class="p-3">
-                            <div class="card categoria rounded-circle">
-                                <a routerLink="/fruta">
-                                    <img class="card-img-top img-fluid" src="https://i.imgur.com/h217D0S.jpg"
-                                        alt="Imagem de capa do card"></a>
-                                <div class="card-body">
+                        <div data-interval="12500" id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100" src="https://i.imgur.com/v0wqvLS.jpg" alt="Primeiro Slide">
                                 </div>
-                            </div>
-                        </div>
 
-
-                        <div class="p-3">
-                            <div class="card categoria rounded-circle">
-                                <a routerLink="/legumes">
-                                    <img class="card-img-top img-fluid" src="https://i.imgur.com/D5vOQQI.jpg"
-                                        alt="Imagem de capa do card"></a>
-                                <div class="card-body">
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="https://i.imgur.com/EftH8rH.jpg" alt="Segundo Slide">
                                 </div>
-                            </div>
-                        </div>
 
-
-                        <div class="p-3">
-                            <div class="card categoria rounded-circle">
-                                <a routerLink="/verduras">
-                                    <img class="card-img-top img-fluid" src="https://i.imgur.com/19FegWJ.jpg"
-                                        alt="Imagem de capa do card"></a>
-                                <div class="card-body">
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="https://i.imgur.com/X0DefqG.jpg" alt="Terceiro Slide">
                                 </div>
+
                             </div>
+                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Anterior</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Próximo</span>
+                            </a>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
-        <!--/Categorias específicas-->
+        <!--/Carrossel-->
 
+
+        <!--Categorias específicas-->
+        <div class="col-md-12 cont">
+            <p class="text-monospace font-weight-bold d-flex justify-content-center fs-14 text-secondary">
+                Selecione uma categoria:
+            </p>
+
+
+            <div class="row">
+                <div class="container">
+                    <div class="col-md-12 d-flex justify-content-center">
+
+                        <div class="card-columns">
+                            <div class="row d-flex justify-content-center">
+                                <div class="card categoria rounded-circle imagem">
+                                    <a routerLink="/fruta">
+                                        <img class="card-img-top img-fluid" src="https://i.imgur.com/h217D0S.jpg" alt="Imagem de capa do card"></a>
+                                </div>
+
+
+                                <div class="card categoria rounded-circle imagem">
+                                    <a routerLink="/legumes">
+                                        <img class="card-img-top img-fluid" src="https://i.imgur.com/D5vOQQI.jpg" alt="Imagem de capa do card"></a>
+                                </div>
+
+
+                                <div class="card categoria rounded-circle imagem">
+                                    <a routerLink="/verduras">
+                                        <img class="card-img-top img-fluid" src="https://i.imgur.com/19FegWJ.jpg" alt="Imagem de capa do card"></a>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/Categorias específicas-->
+
+        </div>
     </div>
 </div>

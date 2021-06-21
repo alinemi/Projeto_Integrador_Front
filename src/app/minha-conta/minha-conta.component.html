@@ -10,17 +10,17 @@
             <br>
             <form>
                 <div class="form-group">
-                    <label for="disabledTextInput">Nome</label>
-                    <input [(ngModel)]='user.nome' type="text" id="disabledTextInput" class="form-control" placeholder="Nome Completo">
+                    <label for="nome">Nome</label>
+                    <input [(ngModel)]='user.nome' type="text" id="nome" class="form-control" placeholder="Nome Completo">
                 </div>
                 <div class="form-group">
-                    <label for="disabledSelect">E-mail</label>
-                    <input [(ngModel)]='user.email' type="text" id="disabledTextInput" class="form-control" placeholder="email@efas.com">
+                    <label for="email">E-mail</label>
+                    <input [(ngModel)]='user.email' type="text" id="email" class="form-control" placeholder="email@efas.com">
                 </div>
 
                 <div class="form-group">
                     <label for="senha">Senha</label>
-                    <input [(ngModel)]='confirmSenha' (input)='confirmSenha($event)' class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha">
+                    <input (input)='confirmSenha($event)' class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha">
                 </div>
 
                 <div class="form-group">
@@ -29,18 +29,18 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="disabledSelect">Telefone</label>
-                    <input type="text" id="disabledTextInput" class="form-control" placeholder="(DDD) 99999-9999">
+                    <label for="celular">Telefone</label>
+                    <input type="text" [(ngModel)]='user.celular' id="celular" class="form-control" placeholder="55(DDD)999999999">
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck">
-                    <label class="form-check-label" for="disabledFieldsetCheck"></label> O telefone é meu WhatsApp.
+                    <label class="form-check-label" for="celular"></label> O telefone é meu WhatsApp.
                 </div>
 
 
-                <div class="d-flex justify-content-center mt-3">
-                    <button type="submit" class="btn btn-success mr-4" (click)='atualizar()'> Atualizar </button>
-                    <button type="submit" class="btn btn-danger" routerLink='/inicio'> Cancelar </button>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-danger mr-4" routerLink='/inicio'>Cancelar</button>
+                    <button type="submit" class="btn btn-success" (click)='atualizar()'>Atualizar</button>
                 </div>
 
             </form>
