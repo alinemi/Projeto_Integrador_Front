@@ -1,38 +1,41 @@
-<div class="container-fluid">
-
+<div class="container-fluid corpo">
     <div class="row d-flex align-items-center">
 
-        <div class="col-md-12">
+        <div class="col-md-12 d-flex justify-content-center mt-3 mb-4">
+            <div class="card example1">
+                <div class="text-center mb-3" id="img-bg">
+                    <img src="https://i.imgur.com/28Q1JbO.png" class="rounded logo text-overflow" alt="some-text" height="150px" width="150px">
+                </div>
+                <p></p>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-6 campos">
 
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-6">
 
-                    <h1 class="text-center mb-3">Entrar</h1>
 
-                    <div class="form-grouo">
-                        <label for="usuario">Usuário</label>
-                        <input [(ngModel)]='userLogin.usuario' class="form-control" type="text" name="usuario" id="usuario" placeholder="seu usuário">
+                        <div class="form-group">
+                            <label for="usuario">E-mail</label>
+                            <input [(ngModel)]='userLogin.usuario' class=" campo form-control " type="text" name="usuario" id="usuario" placeholder="seu usuário">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="senha">Senha</label>
+                            <input [(ngModel)]='userLogin.senha' class="form-control campo" type="password" name="senha" id="senha" placeholder="sua senha">
+                        </div>
+
+                        <div class="d-flex justify-content-center mt-4 mb-2">
+                            <button type="submit" class="btn btn-entrar" (click)='entrar()'>Entrar</button>
+                        </div>
+
+
+                        <div class="row justify-content-center">
+                            <b> Não tem uma conta?</b>
+                        </div>
+                        <div class="row justify-content-center">
+                            <p routerLink="/cadastrar" class="borderLeftRight">Cadastre-se!</p>
+                        </div>
                     </div>
-
-                    <div class="form-grouo">
-                        <label for="senha">Senha</label>
-                        <input [(ngModel)]='userLogin.senha' class="form-control" type="password" name="senha" id="senha" placeholder="sua senha">
-                    </div>
-
-                    <div class="d-flex justify-content-center mt-5">
-                        <button type="submit" class="btn btn-success" (click)='entrar()'>Entrar</button>
-                    </div>
-
-                    <hr class="mt-5 mb-5">
-                    <p class="text-center">
-                        Não tem uma conta? <a routerLink="/cadastrar">Cadastre-se</a>
-                    </p>
-
                 </div>
             </div>
-
-
         </div>
-
-
     </div>
+</div>

@@ -3,4 +3,7 @@ export class UserLogin{
     public nome: string
     public usuario: string
     public senha: string
+    public id: number
+    public tipo: string
+    public celular:number
 }

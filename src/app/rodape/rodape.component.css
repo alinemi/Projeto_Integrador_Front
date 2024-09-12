@@ -1,11 +1,29 @@
-.page-footer{
-    background-color: #88D885;
+.page-footer {
+    background-color: #006B54;
 }
 
-.footer-copyright{
-    background-color: #44B92E;
+.footer-copyright {
+    background-color: #006B54;
 }
 
-.text{
-    color: black;
+.text {
+    color: rgb(255, 255, 255);
+}
+
+.cont {
+    font-weight: bold;
+    font-size: 14pt;
+    font-family: monospace;
+}
+
+@media screen and (min-width: 601px) {
+    .texto {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .texto {
+        font-size: 15px;
+    }
 }

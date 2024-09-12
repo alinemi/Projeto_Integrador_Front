@@ -1,0 +1,85 @@
+html {
+    background-color: #006B54;
+}
+
+#cadastrar {
+    color: #F9960E;
+}
+
+#cadastrar:hover {
+    color: #F9960E;
+}
+
+#cadastrar:active {
+    color: #FCB808;
+}
+
+.example1 {
+    border-radius: 15px 800px 30px;
+    width: 350px;
+    height: 587px;
+    background-color: rgba(255, 255, 255, 0.815);
+}
+
+.campos {
+    width: 250px;
+}
+
+.btn-entrar {
+    color: rgb(99, 95, 95);
+    border: 2px solid #F9960E;
+    background-color: #FCB808;
+}
+
+.btn-entrar:hover {
+    color: rgb(10, 10, 10);
+    border: 2px solid #F9960E;
+    background-color: #F69611;
+}
+
+.btn-entrar:active {
+    color: rgb(99, 95, 95);
+    border: 2px solid #F9960E;
+    background-color: #FCB808;
+}
+
+.corpo {
+    background-color: #006B54;
+}
+
+.logo {
+    height: 200px;
+    width: 200px;
+}
+
+.borderLeftRight {
+    display: inline-block;
+    position: relative;
+    color: hsl(222, 25%, 14%);
+    cursor: pointer;
+}
+
+.borderLeftRight::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #F9960E;
+    transform-origin: bottom right;
+    transition: transform 0.9s cubic-bezier(0.86, 0, 0.02, 1);
+}
+
+.borderLeftRight:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.cont{
+        
+    font-weight: bold;
+    font-size: 14pt;
+    font-family: monospace;
+}

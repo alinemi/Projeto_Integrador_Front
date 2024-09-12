@@ -1,0 +1,63 @@
+#cadastrar {
+    color: rgb(31, 107, 8);
+}
+
+#cadastrar:hover {
+    color: #F9960E;
+}
+
+#cadastrar:active {
+    color: #FCB808;
+}
+
+.example1 {
+    border-radius: 800px 15px 800px 30px;
+    width: 350px;
+    height: 590px;
+    background-color: rgba(255, 255, 255, 0.815);
+}
+
+.example1 {
+    border-radius: 15px 800px 30px;
+    width: 350px;
+    height: 587px;
+    background-color: rgba(255, 255, 255, 0.815);
+}
+
+.campos {
+    width: 250px;
+    margin: 50px;
+}
+
+.btn-entrar {
+    color: rgb(250, 250, 250);
+    border: 2px solid #F9960E;
+    background-color: #FCB808;
+}
+
+.btn-entrar:hover {
+    color: rgb(99, 95, 95);
+    border: 2px solid #F9960E;
+    background-color: #F69611;
+}
+
+.btn-entrar:active {
+    color: rgb(99, 95, 95);
+    border: 2px solid #F9960E;
+    background-color: #FCB808;
+}
+
+.corpo {
+    background-color: #006B54;
+}
+
+.logo {
+    height: 200px;
+    width: 200px;
+}
+.cont{
+        
+    font-weight: bold;
+    font-size: 14pt;
+    font-family: monospace;
+}

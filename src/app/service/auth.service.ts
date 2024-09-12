@@ -1,4 +1,4 @@
-  import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
@@ -14,13 +14,22 @@ export class AuthService {
     private http: HttpClient
   ) { }
 
-  entrar(userLogin: UserLogin): Observable<UserLogin>{
-return this.http.post<UserLogin>('https://projefas.herokuapp.com/usuarios/logar', userLogin)
+  token = {
+    headers: new HttpHeaders().set('Authorization', environment.token)
   }
 
-  cadastrar(user : Usuario):Observable<Usuario> {
-    return this.http.post<Usuario>('https://projefas.herokuapp.com/usuarios/cadastrar', user)
+  entrar(userLogin: UserLogin): Observable<UserLogin>{
+return this.http.post<UserLogin>(' https://projetoefas.herokuapp.com/usuarios/logar', userLogin)
   }
+
+  cadastrar(usuario : Usuario):Observable<Usuario> {
+    return this.http.post<Usuario>(' https://projetoefas.herokuapp.com/usuarios/cadastrar', usuario)
+  }
+
+  getByIdUser(id: number): Observable<Usuario>{
+    return this.http.get<Usuario>(` https://projetoefas.herokuapp.com/usuarios/${id}`, this.token)
+  }
+
 
   logado(){
     let ok = false
